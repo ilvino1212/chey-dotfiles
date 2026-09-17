@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+DEVICE="${OPENRGB_DEVICE:-1}"
+
+if ! command -v openrgb >/dev/null 2>&1; then
+    echo "Errore: OpenRGB non è installato."
+    exit 1
+fi
+
+sudo openrgb --noautoconnect --device "$DEVICE" --color FFFFFF >/dev/null 2>&1

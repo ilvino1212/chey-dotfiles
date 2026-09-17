@@ -1,0 +1,23 @@
+#!/usr/bin/env fish
+set width (tput cols)
+
+if test $width -ge 110
+    fastfetch
+else
+    set cicada_pad (math "max(0, floor(($width - 50) / 2))")
+    set fetch_pad (math "max(0, floor(($width - 39) / 2))")
+
+    printf "
+
+"
+
+    chafa --format symbols --symbols block --size 50x25 $HOME/.local/share/chey-dotfiles/assets/fastfetch/cicada_crop.png | while read -l line
+        printf "%*s%s
+" $cicada_pad "" "$line"
+    end
+
+    fastfetch --logo none | while read -l line
+        printf "%*s%s
+" $fetch_pad "" "$line"
+    end
+end

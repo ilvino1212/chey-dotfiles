@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Backups
+*.backup*
+*.bak
+
+# Editors
+*.swp
+*.swo
+
+# Local state
+home/.config/fish/fish_variables
+home/.config/caelestia/shell.json
+
+# Secrets / credentials
+*.secret
+*.secrets
+*.token
