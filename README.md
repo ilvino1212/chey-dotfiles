@@ -62,7 +62,7 @@ The installer checks for all of them automatically.
 Clone the repository:
 
 ```bash
-git clone <YOUR-REPOSITORY-URL>
+git clone https://github.com/ilvino1212/chey-dotfiles.git
 cd chey-dotfiles
 ```
 
