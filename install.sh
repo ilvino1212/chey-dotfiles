@@ -58,6 +58,8 @@ check_command python3
 check_command hyprctl
 check_command fastfetch
 check_command chafa
+check_command uwsm
+check_command caelestia
 
 if python3 -c "import evdev" >/dev/null 2>&1; then
     echo "  ✓ python evdev"
@@ -188,6 +190,14 @@ verify_file() {
 verify_file "$HOME/.config/fish/config.fish"
 verify_file "$HOME/.config/fish/functions/fish_greeting.fish"
 verify_file "$HOME/.config/caelestia/hypr-user.lua"
+verify_file "$HOME/.config/caelestia/hypr-vars.lua"
+verify_file "$HOME/.config/caelestia/monitors/shell.json"
+verify_file "$HOME/.config/caelestia/user-config.fish"
+verify_file "$HOME/.config/hypr/hyprland.lua"
+verify_file "$HOME/.config/hypr/variables.lua"
+verify_file "$HOME/.config/hypr/xdph.conf"
+verify_file "$HOME/.config/uwsm/env"
+verify_file "$HOME/.config/uwsm/env-hyprland"
 verify_file "$HOME/.local/bin/fastfetch-adaptive"
 verify_file "$HOME/.local/bin/wraith-white"
 verify_file "$INSTALL_DIR/scripts/infinite-desktop/infinite_desktop_core.py"
