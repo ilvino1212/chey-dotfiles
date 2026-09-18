@@ -1,61 +1,34 @@
 # Chey Dotfiles
 
-Personal Linux dotfiles focused on a clean, fast and highly customized Hyprland desktop.
+My personal dotfiles for **CachyOS + Hyprland**.
 
-This repository contains my shell configuration, terminal themes, GTK/Qt styling, Fastfetch setup, Caelestia integration and custom Infinite Desktop scripts.
+I made this repository because I got tired of having to remember and redo every little configuration change whenever I reinstall Linux.
 
-The goal is simple: **clone the repository, run the installer, and get the setup without manually copying dozens of files.**
+The idea is simple: clone the repo, run the installer, and get most of my setup back.
 
-## Features
+This is mainly made for my own system, so don't expect everything here to work perfectly on another machine. Some parts are very specific to my hardware and setup.
 
-* Hyprland configuration through Caelestia user configuration
-* Fish shell
-* Starship prompt
-* eza + zoxide
-* Fastfetch with adaptive ASCII/image layout
-* Noctalia-inspired GTK, Qt and terminal themes
-* Alacritty, Kitty and Foot configurations
-* Fuzzel launcher
-* btop configuration
-* Cava configuration
-* Micro editor configuration
-* OpenRGB helper script
-* Custom Fastfetch assets
-* Infinite Desktop window-management scripts
-* Automated installation with backup support
-* Dependency checking
-* Dry-run mode
+---
 
-## Requirements
+## What's included
 
-### Required
+This repo currently contains my:
 
-The installer expects these components to already be installed:
+* Hyprland configuration
+* Caelestia configuration
+* Infinite Desktop scripts
+* Fish shell configuration
+* Starship configuration
+* Fastfetch configuration
+* GTK and Qt configuration
+* Terminal configuration
+* UWSM environment
+* Custom scripts and utilities
+* Wallpapers/assets used by the setup
 
-* `fish`
-* `python3`
-* `hyprctl`
-* `fastfetch`
-* `chafa`
-* Python `evdev`
+There are also some older theme files that came from my previous setup and are still used by a few applications.
 
-### Optional
-
-These are used by parts of the configuration but are not required for the installer:
-
-* `starship`
-* `direnv`
-* `zoxide`
-* `eza`
-* `lazygit`
-* `kitty`
-* `foot`
-* `fuzzel`
-* `openrgb`
-
-The installer checks for all of them automatically.
-
-> Package names may differ depending on your Linux distribution.
+---
 
 ## Installation
 
@@ -66,118 +39,168 @@ git clone https://github.com/ilvino1212/chey-dotfiles.git
 cd chey-dotfiles
 ```
 
-Make sure the installer is executable:
+Then run:
 
 ```bash
 chmod +x install.sh
-```
-
-Run it:
-
-```bash
 ./install.sh
 ```
 
-The installer will:
+The installer checks the required dependencies, backs up existing configuration files and then copies everything into the correct locations.
 
-1. Check required dependencies.
-2. Show the files that will be installed.
-3. Create a timestamped backup of existing configuration files.
-4. Install the dotfiles.
-5. Install the custom scripts and assets.
-6. Set the required executable permissions.
-7. Verify the installation.
+After installing, restart your session.
 
-Restart your shell/session after installation.
+---
 
-## Dependency Check
+## Installer options
 
-To check whether the required dependencies are available without changing anything:
+Check if the required dependencies are installed:
 
 ```bash
 ./install.sh --check
 ```
 
-## Dry Run
-
-To see what the installer would install without modifying anything:
+See what would be installed without actually changing anything:
 
 ```bash
 ./install.sh --dry-run
 ```
 
+Show the available options:
+
+```bash
+./install.sh --help
+```
+
+---
+
 ## Backups
 
-Before overwriting existing configuration files, the installer creates a backup in:
+The installer doesn't just overwrite everything blindly.
+
+If a file already exists, it gets backed up before being replaced.
+
+Backups are stored in:
 
 ```text
 ~/.local/share/chey-dotfiles-backup-YYYYMMDD-HHMMSS/
 ```
 
-This makes it possible to recover the previous configuration if necessary.
+So if something goes wrong, the previous configuration is still there.
+
+---
 
 ## Infinite Desktop
 
-The repository includes a custom window-management system called **Infinite Desktop**.
+One of the main custom parts of this setup is my Infinite Desktop configuration.
 
-It provides custom Hyprland controls for:
-
-* Moving between workspaces
-* Moving windows between workspaces
-* Navigating between windows
-* Moving tiled windows
-* Resizing windows
-* Switching between floating and tiled behavior
-
-The scripts are located in:
-
-```text
-scripts/infinite-desktop/
-```
-
-They are installed to:
+The scripts live in:
 
 ```text
 ~/.local/share/chey-dotfiles/scripts/infinite-desktop/
 ```
 
-The Hyprland integration is provided through:
+They are integrated into Hyprland through:
 
 ```text
 ~/.config/caelestia/hypr-user.lua
 ```
 
-## Keybinds
+### Keybinds
 
-| Keybind                 | Action                            |
+| Key                     | Action                            |
 | ----------------------- | --------------------------------- |
 | `SUPER + Z`             | Previous workspace                |
 | `SUPER + X`             | Next workspace                    |
 | `SUPER + SHIFT + Z`     | Move window to previous workspace |
 | `SUPER + SHIFT + X`     | Move window to next workspace     |
-| `SUPER + D`             | Toggle floating/tiled behavior    |
-| `SUPER + Arrow`         | Navigate windows                  |
+| `SUPER + D`             | Toggle floating / tiled           |
+| `SUPER + Arrow`         | Navigate between windows          |
 | `SUPER + ALT + Arrow`   | Move tiled window                 |
 | `SUPER + SHIFT + Arrow` | Move window                       |
 | `SUPER + CTRL + Arrow`  | Resize window                     |
 
-## Repository Structure
+---
+
+## My setup
+
+The desktop is basically:
+
+```text
+CachyOS
+└── Hyprland
+    ├── Caelestia
+    ├── UWSM
+    └── Infinite Desktop
+```
+
+Most of the configuration is kept under:
+
+```text
+~/.config/
+```
+
+while custom scripts and assets are installed under:
+
+```text
+~/.local/share/chey-dotfiles/
+```
+
+---
+
+## Repository structure
 
 ```text
 chey-dotfiles/
 ├── assets/
 │   └── fastfetch/
-│       ├── cicada_crop.png
-│       └── cicada_transparent_white.png
 │
 ├── home/
 │   ├── .config/
-│   │   ├── alacritty/
-│   │   ├── btop/
 │   │   ├── caelestia/
-│   │   ├── cava/
-│   │   ├── fastfetch/
 │   │   ├── fish/
-│   │   ├── foot/
+│   │   ├── fastfetch/
+│   │   ├── hypr/
+│   │   ├── uwsm/
+│   │   └── ...
+│   │
+│   └── .local/
+│       └── bin/
 │
+├── scripts/
+│   └── infinite-desktop/
+│
+├── install.sh
+├── README.md
+└── .gitignore
 ```
+
+---
+
+## Why I made this
+
+I don't want my Linux setup to depend on me remembering a bunch of commands and configuration files.
+
+If I reinstall CachyOS, the goal is to be able to do:
+
+```bash
+git clone https://github.com/ilvino1212/chey-dotfiles.git
+cd chey-dotfiles
+./install.sh
+```
+
+and have my usual environment back with as little manual work as possible.
+
+This repository will probably change over time as I change my setup.
+
+---
+
+## Notes
+
+These dotfiles are made for my own system, so they're not meant to be a universal configuration.
+
+My hardware, monitor setup, installed software and some paths are specific to my machine.
+
+If you want to use these dotfiles yourself, feel free to take whatever parts you like and change the rest.
+
+---
