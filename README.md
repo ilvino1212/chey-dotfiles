@@ -1,5 +1,7 @@
 # Chey Dotfiles
 
+<video src="./infinite-desktop-demo.mp4" controls width="800"></video>
+
 My personal dotfiles for **CachyOS + Hyprland**.
 
 I made this repository because I got tired of having to remember and redo every little configuration change whenever I reinstall Linux.
