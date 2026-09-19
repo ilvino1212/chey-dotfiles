@@ -1,6 +1,6 @@
 # Chey Dotfiles
 
-<video src="./infinite-desktop-demo.mp4" controls width="800"></video>
+https://github.com/user-attachments/assets/f20f58f9-297b-4484-8c2e-f6a25a0f19cc
 
 My personal dotfiles for **CachyOS + Hyprland**.
 
