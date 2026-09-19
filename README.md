@@ -94,6 +94,39 @@ So if something goes wrong, the previous configuration is still there.
 
 One of the main custom parts of this setup is my Infinite Desktop configuration.
 
+### New Infinite Desktop
+
+The repository now includes a new version of the Infinite Desktop core.
+
+This is an experimental and personal project designed for Hyprland. It creates an infinite desktop-like environment and allows navigation and window movement beyond the normal workspace layout.
+
+The current implementation includes:
+
+- Infinite desktop-style navigation
+- Mouse-based desktop movement
+- Keyboard navigation
+- Window movement between workspaces
+- Floating-window panning
+- Automatic mouse and keyboard detection
+- Hyprland IPC integration
+- Automatic startup with the Hyprland session
+
+The new version is still under development and has several known issues. It is not professional or production-ready software and is mainly intended as an experimental part of this dotfiles setup.
+
+The main script is:
+
+```text
+scripts/infinite-desktop/infinite_desktop_core.py
+```
+
+The script can be started with:
+
+```bash
+python3 infinite_desktop_core.py 1.6
+```
+
+It can also be started automatically when the Hyprland session starts.
+
 The scripts live in:
 
 ```text
