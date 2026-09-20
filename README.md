@@ -32,7 +32,7 @@ There are also some older theme files that came from my previous setup and are s
 
 ---
 
-## Installation
+## 🚀 Installation
 
 Clone the repository:
 
@@ -92,7 +92,7 @@ So if something goes wrong, the previous configuration is still there.
 
 ---
 
-## Infinite Desktop
+## 🌌 Infinite Desktop
 
 One of the main custom parts of this setup is my Infinite Desktop configuration.
 
@@ -157,7 +157,7 @@ They are integrated into Hyprland through:
 
 ---
 
-## My setup
+## 🧩 My setup
 
 The desktop is basically:
 
@@ -183,7 +183,7 @@ while custom scripts and assets are installed under:
 
 ---
 
-## Repository structure
+## 📁 Repository structure
 
 ```text
 chey-dotfiles/
