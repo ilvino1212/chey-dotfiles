@@ -118,13 +118,13 @@ The new version is still under development and has several known issues. It is n
 The main script is:
 
 ```text
-scripts/infinite-desktop/infinite_desktop_core.py
+scripts/infinite-desktop/infinite_desktop_core25.py
 ```
 
 The script can be started with:
 
 ```bash
-python3 infinite_desktop_core.py 1.6
+python3 infinite_desktop_core25.py
 ```
 
 It can also be started automatically when the Hyprland session starts.
@@ -143,17 +143,16 @@ They are integrated into Hyprland through:
 
 ### Keybinds
 
-| Key                     | Action                            |
-| ----------------------- | --------------------------------- |
-| `SUPER + Z`             | Previous workspace                |
-| `SUPER + X`             | Next workspace                    |
-| `SUPER + SHIFT + Z`     | Move window to previous workspace |
-| `SUPER + SHIFT + X`     | Move window to next workspace     |
-| `SUPER + D`             | Toggle floating / tiled           |
-| `SUPER + Arrow`         | Navigate between windows          |
-| `SUPER + ALT + Arrow`   | Move tiled window                 |
-| `SUPER + SHIFT + Arrow` | Move window                       |
-| `SUPER + CTRL + Arrow`  | Resize window                     |
+| Key / Input | Action |
+| ----------- | ------ |
+| `SUPER + ALT + Mouse` | Pan the infinite desktop |
+| `SUPER + ALT + =` | Zoom in, centered on the cursor |
+| `SUPER + ALT + -` | Zoom out, centered on the cursor |
+| `SUPER + LMB` | Window dragging handled by Hyprland/Caelestia, not Infinite Desktop |
+
+The `SUPER + ALT` mouse grab is active only while the modifier combination is held. The keyboard is never grabbed by Infinite Desktop, so normal Caelestia/Hyprland binds continue to work.
+
+Other workspace and window-management binds in `hypr-user.lua` belong to the surrounding Hyprland/Caelestia configuration and are not handled by the Infinite Desktop core.
 
 ---
 
